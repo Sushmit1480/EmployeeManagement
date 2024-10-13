@@ -1,9 +1,11 @@
 /* src/app/employee-detail/employee-detail.component.css */
-.d-flex {
+.container-fluid {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: calc(
+    100vh - 100px
+  ); /* Adjust height based on navbar/footer height */
 }
 
 .card {

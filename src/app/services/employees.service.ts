@@ -22,4 +22,8 @@ export class EmployeesService {
   createEmployee(employee: FormData): Observable<any> {
     return this.httpClient.post(`${this.url}/create`, employee);
   }
+
+  updateEmployee(id: number, formadata: FormData) {
+    return this.httpClient.put(`${this.url}/update/${id}`, formadata);
+  }
 }

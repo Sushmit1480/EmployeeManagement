@@ -1,1 +1,41 @@
 /* You can add global styles to this file, and also import other style files */
+/* src/styles.css */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Prevent the whole page from scrolling */
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px; /* Set height of the navbar */
+  background-color: #f8f9fa; /* Light background */
+  z-index: 1000; /* Ensure the navbar stays on top */
+}
+
+.scrollable-content {
+  position: absolute;
+  top: 60px; /* Adjust to the height of the navbar */
+  bottom: 60px; /* Adjust to the height of the footer */
+  left: 0;
+  right: 0;
+  overflow-y: auto; /* Allow vertical scrolling */
+  padding: 20px;
+  background-color: #fff; /* Ensure it’s visible between the navbar and footer */
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px; /* Set height of the footer */
+  background-color: #f8f9fa;
+  text-align: center;
+  line-height: 60px; /* Center the text vertically */
+}

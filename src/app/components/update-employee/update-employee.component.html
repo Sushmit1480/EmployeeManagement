@@ -1,0 +1,95 @@
+<!-- src/app/update-employee/update-employee.component.html -->
+<div class="container">
+  <h2 class="text-center">Update Employee</h2>
+
+  <form (ngSubmit)="onSubmit()">
+    <!-- First Name -->
+    <div class="mb-3">
+      <label for="firstName" class="form-label">First Name</label>
+      <input
+        [(ngModel)]="employee.firstName"
+        name="firstName"
+        id="firstName"
+        class="form-control"
+        required
+      />
+    </div>
+
+    <!-- Last Name -->
+    <div class="mb-3">
+      <label for="lastName" class="form-label">Last Name</label>
+      <input
+        [(ngModel)]="employee.lastName"
+        name="lastName"
+        id="lastName"
+        class="form-control"
+        required
+      />
+    </div>
+
+    <!-- Mobile -->
+    <div class="mb-3">
+      <label for="mobile" class="form-label">Mobile</label>
+      <input
+        [(ngModel)]="employee.mobile"
+        name="mobile"
+        id="mobile"
+        class="form-control"
+        required
+      />
+    </div>
+
+    <!-- Email -->
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input
+        [(ngModel)]="employee.email"
+        name="email"
+        id="email"
+        class="form-control"
+        required
+      />
+    </div>
+
+    <!-- Salary -->
+    <div class="mb-3">
+      <label for="salary" class="form-label">Salary</label>
+      <input
+        [(ngModel)]="employee.salary"
+        name="salary"
+        id="salary"
+        type="number"
+        class="form-control"
+        required
+      />
+    </div>
+
+    <!-- Current Photo -->
+    <div class="mb-3 text-center">
+      <label for="currentPhoto" class="form-label">Current Photo</label><br />
+      <img
+        *ngIf="employee.photo"
+        [src]="'data:image/jpeg;base64,' + employee.photo"
+        alt="Employee Photo"
+        class="rounded-circle"
+        style="width: 150px; height: 150px; object-fit: cover"
+      />
+    </div>
+
+    <!-- Optional image upload -->
+    <div class="mb-3">
+      <label for="photo" class="form-label">Update Photo (optional)</label>
+      <input
+        (change)="onFileSelected($event)"
+        type="file"
+        id="photo"
+        class="form-control"
+      />
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="btn btn-success" style="width: 100%">
+      Update Employee
+    </button>
+  </form>
+</div>

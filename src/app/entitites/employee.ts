@@ -5,5 +5,5 @@ export class Employee {
   mobile!: string;
   email!: string;
   salary!: number;
-  photo?: string;
+  photo?: string | null;
 }

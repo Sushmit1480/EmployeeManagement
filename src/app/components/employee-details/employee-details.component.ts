@@ -35,6 +35,12 @@ export class EmployeeDetailsComponent implements OnInit {
     );
   }
 
+  goToUpdateEmployee(): void {
+    if (this.employee?.id) {
+      this.router.navigate([`/update-employee/${this.employee.id}`]);
+    }
+  }
+
   goBack(): void {
     this.router.navigate(['']);
   }

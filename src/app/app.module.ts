@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CreateEmployeeComponent } from './components/create-employee/create-employee.component';
 import { EmployeeDetailsComponent } from './components/employee-details/employee-details.component';
+import { UpdateEmployeeComponent } from './components/update-employee/update-employee.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { EmployeeDetailsComponent } from './components/employee-details/employee
     EmployeeListComponent,
     CreateEmployeeComponent,
     EmployeeDetailsComponent,
+    UpdateEmployeeComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],

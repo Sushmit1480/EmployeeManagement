@@ -1,7 +1,7 @@
 <!-- src/app/employee-detail/employee-detail.component.html -->
 <div
-  class="d-flex justify-content-center align-items-center"
-  style="height: 100vh"
+  class="container-fluid d-flex flex-column justify-content-center align-items-center"
+  style="min-height: calc(100vh - 100px)"
 >
   <div class="card" style="width: 18rem; position: relative">
     <!-- Cross Button (top-right) -->
@@ -35,4 +35,9 @@
       <p class="card-text"><strong>Salary:</strong> {{ employee?.salary }}</p>
     </div>
   </div>
+
+  <!-- Update Button placed outside the card at the bottom -->
+  <button class="btn btn-primary mt-3" (click)="goToUpdateEmployee()">
+    Update
+  </button>
 </div>
