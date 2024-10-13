@@ -4,33 +4,20 @@
   <table class="table table-bordered mt-5">
     <thead>
       <tr>
-        <th>ID</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Mobile</th>
-        <th>Email</th>
-        <th>Salary</th>
-        <th>Photo</th>
+        <th class="text-center">ID</th>
+        <th class="text-center">First Name</th>
+        <th class="text-center">Last Name</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let employee of employees">
-        <td>{{ employee.id }}</td>
-        <td>{{ employee.firstName }}</td>
-        <td>{{ employee.lastName }}</td>
-        <td>{{ employee.mobile }}</td>
-        <td>{{ employee.email }}</td>
-        <td>{{ employee.salary }}</td>
-        <td>
-          <!-- Render the employee's photo (base64 string) as an image -->
-          <img
-            *ngIf="employee.photo"
-            [src]="'data:image/jpeg;base64,' + employee.photo"
-            alt="Employee Photo"
-            width="100"
-            height="100"
-          />
-        </td>
+      <tr
+        *ngFor="let employee of employees"
+        (click)="viewEmployee(employee.id)"
+        style="cursor: pointer"
+      >
+        <td class="text-center">{{ employee.id }}</td>
+        <td class="text-center">{{ employee.firstName }}</td>
+        <td class="text-center">{{ employee.lastName }}</td>
       </tr>
     </tbody>
   </table>

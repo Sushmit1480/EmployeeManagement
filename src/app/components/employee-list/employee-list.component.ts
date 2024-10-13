@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Employee } from 'src/app/entitites/employee';
 import { EmployeesService } from 'src/app/services/employees.service';
 
@@ -10,14 +11,14 @@ import { EmployeesService } from 'src/app/services/employees.service';
 export class EmployeeListComponent implements OnInit {
   employees: Employee[] = [];
 
-  constructor(private employeeService: EmployeesService) {}
+  constructor(private service: EmployeesService, private router: Router) {}
 
   ngOnInit(): void {
     this.getEmployees();
   }
 
   getEmployees(): void {
-    this.employeeService.getAllEmployee().subscribe(
+    this.service.getAllEmployee().subscribe(
       (data: Employee[]) => {
         this.employees = data;
         console.log(data);
@@ -26,5 +27,9 @@ export class EmployeeListComponent implements OnInit {
         console.error('Error fetching employees', error);
       }
     );
+  }
+
+  viewEmployee(id: number): void {
+    this.router.navigate(['/employee-detail', id]);
   }
 }
