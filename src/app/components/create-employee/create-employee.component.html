@@ -1,0 +1,79 @@
+<!-- src/app/create-employee/create-employee.component.html -->
+<div class="container">
+  <h2>Create Employee</h2>
+
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="firstName">First Name</label>
+      <input
+        type="text"
+        id="firstName"
+        class="form-control"
+        [(ngModel)]="employeeForm.firstName"
+        name="firstName"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="lastName">Last Name</label>
+      <input
+        type="text"
+        id="lastName"
+        class="form-control"
+        [(ngModel)]="employeeForm.lastName"
+        name="lastName"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="mobile">Mobile</label>
+      <input
+        type="text"
+        id="mobile"
+        class="form-control"
+        [(ngModel)]="employeeForm.mobile"
+        name="mobile"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input
+        type="email"
+        id="email"
+        class="form-control"
+        [(ngModel)]="employeeForm.email"
+        name="email"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="salary">Salary</label>
+      <input
+        type="number"
+        id="salary"
+        class="form-control"
+        [(ngModel)]="employeeForm.salary"
+        name="salary"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="photo">Photo</label>
+      <input
+        type="file"
+        id="photo"
+        class="form-control"
+        (change)="onFileChange($event)"
+        required
+      />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
