@@ -10,6 +10,7 @@ import { EmployeesService } from 'src/app/services/employees.service';
 })
 export class EmployeeDetailsComponent implements OnInit {
   employee: Employee | null = null;
+  deletionMessage: string = '';
 
   constructor(
     private service: EmployeesService,
@@ -43,5 +44,25 @@ export class EmployeeDetailsComponent implements OnInit {
 
   goBack(): void {
     this.router.navigate(['']);
+  }
+
+  deleteEmployee(): void {
+    if (this.employee?.id) {
+      const confirmed = confirm(
+        'Are you sure you want to delete this employee?'
+      );
+      if (confirmed) {
+        this.service.deleteEmployee(this.employee.id).subscribe({
+          next: (message: string) => {
+            alert(message); // Display the deletion message from the server
+            this.router.navigate(['']); // Navigate back to employee list
+          },
+          error: (error) => {
+            console.error('Error deleting employee', error);
+            alert('Error deleting employee');
+          },
+        });
+      }
+    }
   }
 }

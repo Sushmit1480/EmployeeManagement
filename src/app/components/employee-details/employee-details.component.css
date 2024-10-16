@@ -1,30 +1,53 @@
-/* src/app/employee-detail/employee-detail.component.css */
-.container-fluid {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: calc(
-    100vh - 100px
-  ); /* Adjust height based on navbar/footer height */
+.container {
+  height: 100vh; /* Full height to vertically center the card */
 }
 
 .card {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: relative;
 }
 
 .card-img-top {
-  border-radius: 50%;
+  border: 3px solid #ddd;
 }
 
-.btn-close {
+.card-footer {
+  background-color: transparent;
+  border-top: none;
+}
+
+button {
+  width: 100px;
+}
+
+/* Styling the Close (Cross) Button */
+.close-btn {
+  font-size: 20px;
+  line-height: 20px;
+  padding: 0;
   position: absolute;
   top: 10px;
   right: 10px;
-  background-color: transparent;
+  width: 35px;
+  height: 35px;
+  background-color: #f44336; /* Red background */
+  color: white;
   border: none;
-  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
+}
+
+.close-btn:hover {
+  background-color: #d32f2f; /* Darker red on hover */
+}
+
+/* Horizontal line with side margins */
+.horizontal-line {
+  width: 80%; /* Make it shorter than the full width */
+  margin: 10px auto; /* Center it horizontally with margin */
+  border: 0;
+  height: 1px;
+  background: #ccc;
 }

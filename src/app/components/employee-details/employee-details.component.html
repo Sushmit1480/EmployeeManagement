@@ -1,43 +1,40 @@
-<!-- src/app/employee-detail/employee-detail.component.html -->
-<div
-  class="container-fluid d-flex flex-column justify-content-center align-items-center"
-  style="min-height: calc(100vh - 100px)"
->
-  <div class="card" style="width: 18rem; position: relative">
-    <!-- Cross Button (top-right) -->
-    <button
-      (click)="goBack()"
-      class="btn-close"
-      aria-label="Close"
-      style="position: absolute; top: 10px; right: 10px"
-    ></button>
+<div class="container d-flex justify-content-center align-items-center mt-5">
+  <div class="card text-center" style="width: 300px; position: relative">
+    <!-- Close Button (Top Right) -->
+    <button class="btn close-btn rounded-circle" (click)="goBack()">
+      &times;
+    </button>
 
-    <!-- Circular Image -->
+    <!-- Employee Photo -->
     <img
-      *ngIf="employee?.photo"
-      [src]="'data:image/jpeg;base64,' + employee?.photo"
+      [src]="
+        employee?.photo
+          ? 'data:image/jpeg;base64,' + employee?.photo
+          : 'assets/default-profile.png'
+      "
       alt="Employee Photo"
-      class="card-img-top rounded-circle"
-      style="width: 150px; height: 150px; object-fit: cover; margin: 10px auto"
+      class="card-img-top rounded-circle mx-auto mt-3"
+      style="width: 150px; height: 150px; object-fit: cover"
     />
 
-    <!-- Horizontal Line -->
-    <hr />
+    <!-- Horizontal Line (with space on sides) -->
+    <hr class="horizontal-line" />
 
-    <div class="card-body text-center">
-      <h5 class="card-title">
-        {{ employee?.firstName }} {{ employee?.lastName }}
-      </h5>
-      <p class="card-text"><strong>ID:</strong> {{ employee?.id }}</p>
-      <!-- Displaying the ID -->
-      <p class="card-text"><strong>Mobile:</strong> {{ employee?.mobile }}</p>
-      <p class="card-text"><strong>Email:</strong> {{ employee?.email }}</p>
-      <p class="card-text"><strong>Salary:</strong> {{ employee?.salary }}</p>
+    <!-- Employee Details -->
+    <div class="card-body">
+      <h4>{{ employee?.firstName }} {{ employee?.lastName }}</h4>
+      <p>ID: {{ employee?.id }}</p>
+      <p>Mobile: {{ employee?.mobile }}</p>
+      <p>Email: {{ employee?.email }}</p>
+      <p>Salary: {{ employee?.salary | currency }}</p>
+    </div>
+
+    <!-- Action Buttons (Update & Delete) -->
+    <div class="card-footer d-flex justify-content-between">
+      <button class="btn btn-primary" (click)="goToUpdateEmployee()">
+        UPDATE
+      </button>
+      <button class="btn btn-danger" (click)="deleteEmployee()">DELETE</button>
     </div>
   </div>
-
-  <!-- Update Button placed outside the card at the bottom -->
-  <button class="btn btn-primary mt-3" (click)="goToUpdateEmployee()">
-    Update
-  </button>
 </div>

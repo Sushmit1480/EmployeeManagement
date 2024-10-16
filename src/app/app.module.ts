@@ -11,6 +11,11 @@ import { FormsModule } from '@angular/forms';
 import { CreateEmployeeComponent } from './components/create-employee/create-employee.component';
 import { EmployeeDetailsComponent } from './components/employee-details/employee-details.component';
 import { UpdateEmployeeComponent } from './components/update-employee/update-employee.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -22,7 +27,17 @@ import { UpdateEmployeeComponent } from './components/update-employee/update-emp
     EmployeeDetailsComponent,
     UpdateEmployeeComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatDialogModule,
+    MatCardModule,
+    MatIconModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

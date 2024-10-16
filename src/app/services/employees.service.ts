@@ -26,4 +26,10 @@ export class EmployeesService {
   updateEmployee(id: number, formadata: FormData) {
     return this.httpClient.put(`${this.url}/update/${id}`, formadata);
   }
+
+  deleteEmployee(id: number): Observable<string> {
+    return this.httpClient.delete<string>(`${this.url}/delete/${id}`, {
+      responseType: 'text' as 'json',
+    });
+  }
 }
